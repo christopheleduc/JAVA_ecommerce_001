@@ -7,11 +7,11 @@ import java.util.List;
 
 @Repository
 public class ProductDaoImpl implements ProductDao {
-    public static List<Product>products= new ArrayList<>();
+    public static List<Product>products = new ArrayList<>();
     static {
-        products.add(new Product(1, new String("Ordinateur portable"), 350));
-        products.add(new Product(2, new String("Aspirateur robot"), 500));
-        products.add(new Product(3, new String("Table de ping pong"), 750));
+        products.add(new Product(1, new String("Ordinateur portable"), 350, 120));
+        products.add(new Product(2, new String("Aspirateur robot"), 500, 200));
+        products.add(new Product(3, new String("Table de ping pong"), 750, 400));
     }
 
     @Override
