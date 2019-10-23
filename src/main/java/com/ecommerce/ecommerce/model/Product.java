@@ -1,19 +1,29 @@
 package com.ecommerce.ecommerce.model;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
+//import com.fasterxml.jackson.annotation.JsonFilter;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 //import com.fasterxml.jackson.annotation.JsonIgnore;
 //import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 //@JsonIgnoreProperties(value = {"id", "buyPrice"})
-@JsonFilter("dynamicMask")
-public class Product {
+@Entity
+//@JsonFilter("dynamicMask")
+public class Product implements java.io.Serializable {
+
+    @Id
+    @GeneratedValue
     private int id;
+
     private String name;
+
     private  int price;
 
     // Info sensible
     //@JsonIgnore
-    private int buyPrice;
+    private int zbuyPrice;
 
     public Product() {
     }
@@ -22,15 +32,11 @@ public class Product {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.buyPrice = buyPrice;
+        this.zbuyPrice = buyPrice;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -50,11 +56,11 @@ public class Product {
     }
 
     public int getBuyPrice() {
-        return buyPrice;
+        return zbuyPrice;
     }
 
     public void setBuyPrice(int buyPrice) {
-        this.buyPrice = buyPrice;
+        this.zbuyPrice = buyPrice;
     }
 
     @Override
