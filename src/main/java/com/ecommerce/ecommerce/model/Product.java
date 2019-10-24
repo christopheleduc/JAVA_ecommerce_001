@@ -2,6 +2,7 @@ package com.ecommerce.ecommerce.model;
 
 //import com.fasterxml.jackson.annotation.JsonFilter;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,12 +18,15 @@ public class Product implements java.io.Serializable {
     @GeneratedValue
     private int id;
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     private  int price;
 
     // Info sensible
     //@JsonIgnore
+    @Column(nullable = false)
     private int zbuyPrice;
 
     public Product() {
